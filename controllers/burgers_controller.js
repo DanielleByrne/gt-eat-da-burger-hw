@@ -2,8 +2,6 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
-const cat = require("../models/burger.js");
 const burger = require("../models/burger.js");
 
 router.get("/", function (req, res) {
@@ -11,9 +9,21 @@ router.get("/", function (req, res) {
     let hbsObject = {
       burgers: data,
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
+});
+
+router.post("/api/burgers", function (req, res) {
+  burger.insertOne(
+    ["burger_name", "devoured"],
+    [req.body.burger_name, req.body.devoured],
+    function (result) {
+      res.json({ id: result.insertId });
+      //not logging 
+    //   console.log(result);
+    }
+  );
 });
 
 module.exports = router;
