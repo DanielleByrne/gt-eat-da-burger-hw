@@ -20,8 +20,7 @@ router.post("/api/burgers", function (req, res) {
     [req.body.burger_name, req.body.devoured],
     function (result) {
       res.json({ id: result.insertId });
-      //not logging 
-    //   console.log(result);
+      console.log(result);
     }
   );
 });
