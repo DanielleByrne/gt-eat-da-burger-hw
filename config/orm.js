@@ -41,7 +41,7 @@ const orm = {
     queryString += questionMarks(burgerValues.length);
     queryString += ") ";
 
-    connection.query(queryString, newBurger, function (err, result) {
+    connection.query(queryString, burgerValues, function (err, result) {
       if (err) {
         throw err;
       }
@@ -51,7 +51,7 @@ const orm = {
   updateOne: function(burgersTable, objBurgerVal, devouredCondition, cb){
     let queryString = "UPDATE" + burgersTable;
     queryString += " SET ";
-    queryString += objToSql(objBurgerVal);
+    queryString += objSql(objBurgerVal);
     queryString += " WHERE ";
     queryString += devouredCondition;
 
@@ -66,6 +66,4 @@ const orm = {
 
 };
  
-// updateOne()
-
 module.exports = orm;

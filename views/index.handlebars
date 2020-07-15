@@ -2,20 +2,20 @@
 <h3>You'll be back... for more burgers</h3>
 
 <ul>
-  {{#each burgers}}
+    {{#each burgers}}
     {{#unless devoured}}
-    {{burger_name}}
+    {{> burgers/burger-block devoured=true}}
     {{/unless}}
-  {{/each}}
+    {{/each}}
 </ul>
 
 <ul>
-  {{#each burgers}}
+    {{#each burgers}}
     {{#if devoured}}
-    {{burger_name}}
+    {{> burgers/burger-block devoured=false}} 
     {{/if}}
-  {{/each}}
-</ul> 
+    {{/each}}
+</ul>
 
 <form class="burger-form">
     <div class="form-group">
@@ -23,8 +23,5 @@
         <input type="text" id="newBurger" name="name" />
         <button id="burgerbtn" type="submit">Add a Burger</button>
         <h5>enter a burger you want to eat and hit the add button</h5>
-    </div>
-    <div>
-        <button>Devour it!</button>
     </div>
 </form>
