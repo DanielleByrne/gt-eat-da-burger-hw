@@ -24,5 +24,9 @@ router.post("/api/burgers", function (req, res) {
     }
   );
 });
+router.update("/api/bugers/:id", function (req,res){
+  let burgerCondition = "id = " + req.params.id;
+  console.log("condition", burgerCondition);
+})
 
 module.exports = router;

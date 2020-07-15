@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  console.log("ready");
   //listening to submit button to add a new burger
   $(document).on("click", "#burgerbtn", function (event) {
     event.preventDefault();

@@ -66,5 +66,6 @@ const orm = {
 
 };
  
+// updateOne()
 
 module.exports = orm;
