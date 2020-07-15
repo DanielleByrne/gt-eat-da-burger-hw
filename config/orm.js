@@ -11,6 +11,7 @@ function questionMarks(num) {
 function objSql(ob) {
   let arr = [];
   for (let key in ob) {
+    let value = ob[key];
     if (Object.hasOwnProperty.call(ob, key)) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
@@ -18,6 +19,7 @@ function objSql(ob) {
       arr.push(key + "=" + value);
     }
   }
+  return arr.toString();
 }
 const orm = {
   selectAll: function (tableInput, cb) {
@@ -27,8 +29,6 @@ const orm = {
         throw err;
       }
       cb(result);
-      //logging
-    //   console.log(result)
     });
   },
   insertOne: function (table, cols, vals, cb) {
@@ -40,8 +40,6 @@ const orm = {
     queryString += "VALUES (";
     queryString += questionMarks(vals.length);
     queryString += ") ";
-    //not logging 
-    // console.log(queryString);
 
     connection.query(queryString, vals, function (err, result) {
       if (err) {
@@ -51,7 +49,7 @@ const orm = {
     });
   },
 };
-// * `insertOne()`
-// * `updateOne()`
+ 
+// updateOne()
 
 module.exports = orm;

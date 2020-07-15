@@ -9,19 +9,18 @@ router.get("/", function (req, res) {
     let hbsObject = {
       burgers: data,
     };
-    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burgers", function (req, res) {
+  console.log("hit post route");
   burger.insertOne(
     ["burger_name", "devoured"],
     [req.body.burger_name, req.body.devoured],
     function (result) {
       res.json({ id: result.insertId });
-      //not logging 
-    //   console.log(result);
+      console.log(result);
     }
   );
 });
