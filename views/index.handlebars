@@ -1,27 +1,43 @@
-<h2>The Burg-inator</h2>
-<h3>You'll be back... for more burgers</h3>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=false}} 
-    {{/if}}
-    {{/each}}
-</ul>
-
-<form class="burger-form">
-    <div class="form-group">
-        <label for="newBurger">Burger:</label>
-        <input type="text" id="newBurger" name="name" />
-        <button id="burgerbtn" type="submit">Add a Burger</button>
-        <h5>enter a burger you want to eat and hit the add button</h5>
+<div class="container">
+    <div class="row justify-content center">
+        <h2>The Burg-inator</h2>
     </div>
-</form>
+    <div class="row justify-content center">
+        <h4>You'll be back... for more burgers</h4>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col" id="burgerReady">
+            <div class="container" id="burgerReadyCont">
+                <ol>
+                    <h2>Ready Burgers</h2>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+        <div class="col" id="burgerGone">
+            <div class="container" id="burgerGoneCont">
+                <h2>Terminated Burgers</h2>
+                <ol>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <form class="burger-form">
+        <div class="form-group">
+            <label for="newBurger">Burger:</label>
+            <input type="text" id="newBurger" name="name" />
+            <button id="burgerbtn" type="submit" type="button" class="btn btn-info">Add a Burger</button>
+            <h5>enter a burger you want to eat and hit the add button</h5>
+        </div>
+    </form>
+</div>

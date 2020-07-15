@@ -1,9 +1,8 @@
 # Eat The Burger Node/Express Homework
-https://quiet-sea-00714.herokuapp.com/
-https://github.com/DanielleByrne/gt-eat-da-burger-hw
 
-
+[Link to Heroku] (https://quiet-sea-00714.herokuapp.com/)
 [Link to GitHub] (https://github.com/DanielleByrne/gt-eat-da-burger-hw)
+
 
 ## Table of Contents 
 
@@ -14,12 +13,12 @@ https://github.com/DanielleByrne/gt-eat-da-burger-hw
 
 ## Installation
 
-Clone the repository from GitHub, run npm install, and run the node server.js application
+Clone the repository from GitHub, run npm install, change the password to your local password, and run the node server.js application
 
 
 ## Usage 
 
-This project is comprised of multiple JS and Handlebars files to create a responsive web app to keep track of a list of burgers a user wants to, and has eaten
+This project is comprised of multiple JS and Handlebars files to create a responsive web app to keep track of a list of burgers a user wants to, and has eaten.
 
 ![test](test)
 
@@ -28,12 +27,13 @@ This project is comprised of multiple JS and Handlebars files to create a respon
 
 ## Credits
 
-This was a project I completed as a homework assignment in my Georgia Tech Coding Bootcamp. I used in-class activites as reaferences as well as Node, Express, Handlebars, and MySQL
+This was a project I completed as a homework assignment in my Georgia Tech Coding Bootcamp. I used in-class activites as reaferences as well as Node, Express, Handlebars, and MySQL. I also used Bootstrap to help provide styling to the site.
 
 * [Express](https://expressjs.com/)
 * [Node.JS](https://nodejs.org/en/)
 * [Handlebars](https://handlebarsjs.com/)
 * [MySQL](https://www.mysql.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 ## License
 
