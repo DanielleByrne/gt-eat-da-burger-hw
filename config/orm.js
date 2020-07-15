@@ -31,25 +31,40 @@ const orm = {
       cb(result);
     });
   },
-  insertOne: function (table, cols, vals, cb) {
-    let queryString = "INSERT INTO " + table;
+  insertOne: function (burgersTable, burgerName, burgerValues, cb) {
+    let queryString = "INSERT INTO " + burgersTable;
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += burgerName.toString();
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += questionMarks(vals.length);
+    queryString += questionMarks(burgerValues.length);
     queryString += ") ";
 
-    connection.query(queryString, vals, function (err, result) {
+    connection.query(queryString, newBurger, function (err, result) {
       if (err) {
         throw err;
       }
       cb(result);
     });
   },
+  updateOne: function(burgersTable, objBurgerVal, devouredCondition, cb){
+    let queryString = "UPDATE" + burgersTable;
+    queryString += " SET ";
+    queryString += objToSql(objBurgerVal);
+    queryString += " WHERE ";
+    queryString += devouredCondition;
+
+    console.log(queryString);
+    connection.query(queryString, function(err, result){
+      if (err){
+        throw err
+      }
+      cb(result)
+    })
+  }
+
 };
  
-// updateOne()
 
 module.exports = orm;

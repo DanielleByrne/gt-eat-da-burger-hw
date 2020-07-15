@@ -11,6 +11,8 @@ const burger = {
       cb(res);
     });
   },
+  // updateOne()
+
 };
 
 module.exports = burger;
