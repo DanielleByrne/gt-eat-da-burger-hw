@@ -50,6 +50,6 @@ const orm = {
   },
 };
  
-updateOne()
+// updateOne()
 
 module.exports = orm;
