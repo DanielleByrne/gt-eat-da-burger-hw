@@ -49,7 +49,7 @@ const orm = {
     });
   },
   updateOne: function(burgersTable, objBurgerVal, devouredCondition, cb){
-    let queryString = "UPDATE" + burgersTable;
+    let queryString = "UPDATE " + burgersTable;
     queryString += " SET ";
     queryString += objSql(objBurgerVal);
     queryString += " WHERE ";

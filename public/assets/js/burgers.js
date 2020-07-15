@@ -22,16 +22,16 @@ $(document).ready(function () {
     event.preventDefault();
 
     const id = $(this).data("id");
-    const devouredBurger = $(this).data("devouredBurger");
+    const devoured = $(this).data("devoured");
   
     const devouredBurgerState = {
-      devoured: devouredBurger,
+      devoured: devoured,
     };
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devouredBurgerState,
     }).then(function () {
-      console.log("changed devour to", devouredBurger);
+      console.log("changed devour to", devoured);
       location.reload();
     });
   });
