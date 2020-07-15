@@ -40,8 +40,6 @@ const orm = {
     queryString += "VALUES (";
     queryString += questionMarks(vals.length);
     queryString += ") ";
-    //not logging
-    // console.log(queryString);
 
     connection.query(queryString, vals, function (err, result) {
       if (err) {
@@ -51,7 +49,7 @@ const orm = {
     });
   },
 };
-// * `insertOne()`
-// * `updateOne()`
+ 
+updateOne()
 
 module.exports = orm;
