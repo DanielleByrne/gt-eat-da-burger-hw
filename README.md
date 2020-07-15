@@ -20,8 +20,8 @@ Clone the repository from GitHub, run npm install, change the password to your l
 
 This project is comprised of multiple JS and Handlebars files to create a responsive web app to keep track of a list of burgers a user wants to, and has eaten.
 
-![test](test)
-
+![BurgerPage](burgerpage.png)
+![AddedBurger](addedburger.png)
 
 
 

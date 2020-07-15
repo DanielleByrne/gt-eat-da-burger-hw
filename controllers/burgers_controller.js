@@ -4,6 +4,7 @@ const router = express.Router();
 
 const burger = require("../models/burger.js");
 
+// get route for all burgers
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
     let hbsObject = {
@@ -13,6 +14,7 @@ router.get("/", function (req, res) {
   });
 });
 
+// post route for new burgers
 router.post("/api/burgers", function (req, res) {
   burger.insertOne(
     ["burger_name", "devoured"],
@@ -23,6 +25,8 @@ router.post("/api/burgers", function (req, res) {
     }
   );
 });
+
+// put route for updating burger contition
 router.put("/api/burgers/:id", function (req, res) {
   console.log (req.body)
   let burgerCondition = "id = " + req.params.id;

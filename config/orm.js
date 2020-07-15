@@ -1,5 +1,6 @@
 const connection = require("../config/connection.js");
 
+// function adding quotation marks into the query, referened from class activity 
 function questionMarks(num) {
   let arr = [];
   for (let i = 0; i < num; i++) {
@@ -8,6 +9,7 @@ function questionMarks(num) {
   return arr.toString();
 }
 
+// function to take the object and format it for SQL, also referenced from class activity 
 function objSql(ob) {
   let arr = [];
   for (let key in ob) {
@@ -21,6 +23,7 @@ function objSql(ob) {
   }
   return arr.toString();
 }
+//select all function
 const orm = {
   selectAll: function (tableInput, cb) {
     let queryString = "SELECT * FROM " + tableInput + ";";
@@ -31,6 +34,7 @@ const orm = {
       cb(result);
     });
   },
+  //inserting new burgers function
   insertOne: function (burgersTable, burgerName, burgerValues, cb) {
     let queryString = "INSERT INTO " + burgersTable;
 
@@ -48,6 +52,7 @@ const orm = {
       cb(result);
     });
   },
+  //updating burgers from eaten/not eaten
   updateOne: function(burgersTable, objBurgerVal, devouredCondition, cb){
     let queryString = "UPDATE " + burgersTable;
     queryString += " SET ";

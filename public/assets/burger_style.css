@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(182, 179, 179) !important;
+  }
+
+.text-row{
+    text-align: center !important;
+}
+
+.text{
+    display: inline-block;
+}
