@@ -18,4 +18,6 @@ $(document).ready(function () {
         location.reload();
     });
   });
+
+  //listener for the devour button
 });
